@@ -1,0 +1,25 @@
+<div class="app-container">
+  <header class="header">
+    <h1>{{ title }}</h1>
+    <p class="subtitle">Upload your handwritten expense notebook and let AI calculate the total</p>
+  </header>
+
+  <main class="main-content">
+    <app-image-upload
+      [isProcessing]="isProcessing"
+      (imageSelected)="handleImageSelect($event)">
+    </app-image-upload>
+
+    <div *ngIf="error" class="error-message">
+      {{ error }}
+    </div>
+
+    <app-expense-results
+      [detectedAmounts]="detectedAmounts"
+      [totalAmount]="totalAmount"
+      [extractedText]="extractedText">
+    </app-expense-results>
+
+    <app-expense-history [refresh]="refreshHistory"></app-expense-history>
+  </main>
+</div>

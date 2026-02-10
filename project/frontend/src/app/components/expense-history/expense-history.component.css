@@ -1,0 +1,77 @@
+.history-container {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 48px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1e293b;
+}
+
+.message {
+  text-align: center;
+  color: #64748b;
+  padding: 20px;
+}
+
+.error-message {
+  text-align: center;
+  color: #dc2626;
+  padding: 20px;
+  background-color: #fee2e2;
+  border-radius: 8px;
+}
+
+.records-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.record-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.record-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.record-date {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.record-total {
+  font-size: 20px;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.record-amounts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.amount-tag {
+  padding: 4px 12px;
+  background-color: #f1f5f9;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #475569;
+}

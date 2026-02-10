@@ -1,0 +1,21 @@
+<div class="results-container" *ngIf="detectedAmounts.length > 0">
+  <div class="results-card">
+    <h2>Detected Amounts</h2>
+    <div class="amounts-grid">
+      <div *ngFor="let amount of detectedAmounts" class="amount-chip">
+        {{ amount.toFixed(2) }}
+      </div>
+    </div>
+    <div class="total-section">
+      <span class="total-label">Total Expenses:</span>
+      <span class="total-amount">{{ totalAmount.toFixed(2) }}</span>
+    </div>
+  </div>
+
+  <div *ngIf="extractedText" class="extracted-text-section">
+    <button class="toggle-button" (click)="toggleExtractedText()">
+      {{ showExtractedText ? 'Hide' : 'View' }} Extracted Text
+    </button>
+    <pre *ngIf="showExtractedText" class="extracted-text">{{ extractedText }}</pre>
+  </div>
+</div>

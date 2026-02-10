@@ -1,0 +1,20 @@
+# Frontend Dockerfile
+FROM node:20-alpine
+
+# Set work directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy project files
+COPY . .
+
+# Expose port
+EXPOSE 4200
+
+# Start Angular development server
+CMD ["npm", "start", "--", "--host", "0.0.0.0", "--poll", "2000"]

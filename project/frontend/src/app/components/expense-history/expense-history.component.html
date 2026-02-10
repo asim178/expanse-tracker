@@ -1,0 +1,25 @@
+<div class="history-container">
+  <h2>Recent Expenses</h2>
+
+  <div *ngIf="loading" class="message">Loading history...</div>
+
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <div *ngIf="!loading && !error && records.length === 0" class="message">
+    No expense records yet. Upload an image to get started!
+  </div>
+
+  <div *ngIf="!loading && !error && records.length > 0" class="records-list">
+    <div *ngFor="let record of records" class="record-card">
+      <div class="record-header">
+        <span class="record-date">{{ formatDate(record.created_at!) }}</span>
+        <span class="record-total">{{ record.total_amount.toFixed(2) }}</span>
+      </div>
+      <div class="record-amounts">
+        <span *ngFor="let amount of record.detected_amounts" class="amount-tag">
+          {{ amount.toFixed(2) }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
